@@ -34,7 +34,7 @@ public class DaoImplementation {
 
 	public Student login(String userName, String password) throws SQLException, LoginException {
 		Student stud = null;
-		String query = "SELECT * FROM TEST2 WHERE USERNAME=? AND PASSWORD = ?";
+		String query = "SELECT * FROM TEST WHERE USERNAME=? AND PASSWORD = ?";
 //		String specialCharacters = "/^[@]$/";
 		try (Connection connection = getConnection(); 
 			PreparedStatement prepare = connection.prepareStatement(query);) {
@@ -64,7 +64,7 @@ public class DaoImplementation {
 
 	public boolean registerUser(Student stud) {
 		boolean result = false;
-		String query = "INSERT INTO TEST2(USERNAME,PASSWORD,ADDRESS,EMAILID,CONTACTNO) VALUES(?,?,?,?,?);";
+		String query = "INSERT INTO TEST(USERNAME,PASSWORD,ADDRESS,EMAILID,CONTACTNO) VALUES(?,?,?,?,?);";
 		try (Connection connection = getConnection(); PreparedStatement prepare = connection.prepareStatement(query);) {
 			
 			prepare.setString(1, stud.getUserName());

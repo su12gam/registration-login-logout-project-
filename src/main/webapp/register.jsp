@@ -52,7 +52,7 @@ body {
 	<fieldset>
 		${RegisterError}
 		<form action="Reg" method="post" onsubmit="return validate(this)">
-			<table cellpadding="4" cellspacing="5">
+			<table>
 				<tr>
 					<td>Enter User Name :</td>
 					<td><input type="text" id="userName" name="userName"></td>

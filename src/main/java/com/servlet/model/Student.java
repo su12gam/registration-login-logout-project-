@@ -2,15 +2,13 @@ package com.servlet.model;
 
 public class Student {
 
-	private int userId;
 	private String userName;
 	private String password;
 	private String address;
 	private String emailId;
 	private String contactNo;
 
-	public Student(int userId, String userName, String password, String address, String emailId, String contactNo) {
-		this.userId = userId;
+	public Student(String userName, String password, String address, String emailId, String contactNo) {
 		this.userName = userName;
 		this.password = password;
 		this.address = address;
@@ -19,14 +17,6 @@ public class Student {
 	}
 
 	public Student() {
-	}
-
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
 	}
 
 	public String getUserName() {
@@ -71,7 +61,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [userId=" + userId + ", userName=" + userName + ", password=" + password + ", address="
+		return "Student [ userName=" + userName + ", password=" + password + ", address="
 				+ address + ", emailId=" + emailId + ", contactNo=" + contactNo + "]";
 	}
 

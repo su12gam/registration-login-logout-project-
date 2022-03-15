@@ -44,7 +44,7 @@ t
 		<fieldset>
 
 			<form action="Login" method="post" onsubmit="return validate(this)">
-				<table cellpadding="4" cellspacing="5">
+				<table >
 					<tr>
 						<td><%=request.getAttribute("errorMessage")%></td>
 					</tr>
