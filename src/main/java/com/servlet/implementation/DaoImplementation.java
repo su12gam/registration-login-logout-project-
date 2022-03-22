@@ -79,4 +79,33 @@ public class DaoImplementation {
 		}
 		return result;
 	}
+	public int updateUser(Student stud) {
+		int rowUpdated=0;
+		String query="update TEST set PASSWORD=?,ADDRESS=?,EMAILID=?,CONTACTNO=? where USERNAME=?";	
+		try (Connection connection=getConnection(); 
+				PreparedStatement preparedStatement=connection.prepareStatement(query);){
+			
+			preparedStatement.setString(1, stud.getPassword());
+			preparedStatement.setString(2, stud.getAddress());
+			preparedStatement.setString(3, stud.getEmailId());
+			preparedStatement.setString(4, stud.getContactNo());
+			preparedStatement.setString(5, stud.getUserName());
+			rowUpdated=preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Error while updating the data "+e.getMessage());
+		}
+		return rowUpdated;
+	}
+	public int deleteUser(Student stud) {
+		int rowDeleted=0;
+		String query="delete from TEST where userName = ?";	
+		try (Connection connection=getConnection(); 
+				PreparedStatement preparedStatement=connection.prepareStatement(query);){
+			preparedStatement.setString(1, stud.getUserName());
+			rowDeleted=preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Error while updating the data "+e.getMessage());
+		}
+		return rowDeleted;
+	}
 }
